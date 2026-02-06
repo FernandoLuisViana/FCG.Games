@@ -15,7 +15,7 @@ namespace FCG.Games.API.Extensions
             app.UseAuthorization();
             app.UseCustomMiddlewares();
             app.MapControllers();
-            //app.GenerateMigrations();
+            app.GenerateMigrations();
             app.MapHealthChecks("/health");
         }
 
