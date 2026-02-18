@@ -7,4 +7,6 @@ public class GameMetricsResult
     public decimal AvgPrice { get; set; }
     public decimal MinPrice { get; set; }
     public decimal MaxPrice { get; set; }
+    public decimal TotalPrice { get; set; }
+    public decimal CountPrice { get; set; }
 }
