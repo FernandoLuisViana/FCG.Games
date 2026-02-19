@@ -1,6 +1,7 @@
 ﻿using Elastic.Clients.Elasticsearch;
 using Elastic.Transport;
 using FCG.Games.API.Filters;
+using FCG.Games.API.Messaging;
 using FCG.Games.API.Middlewares;
 using FCG.Games.Domain.Interfaces.Common;
 using FCG.Games.Domain.Interfaces.Repositories;
@@ -178,6 +179,10 @@ namespace FCG.Games.API.Extensions
             // Middlewares
             builder.Services.AddScoped<ExceptionMiddleware>();
             builder.Services.AddScoped(typeof(ValidationFilter<>));
+
+            //Rabbit
+            builder.Services.AddSingleton<RabbitPublisher>();
+
         }
 
         private static void ConfigureHealthCheck(this WebApplicationBuilder builder)
